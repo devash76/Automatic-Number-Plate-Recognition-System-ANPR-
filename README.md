@@ -1,7 +1,8 @@
-# Automatic-Number-Plate-Recognition-System-ANPR-
-Automatically detects license plate of car and recognizes its characters from a video
+# AutomaticLicensePlateDetector
+Detects license plate of car and recognizes its characters
 
 ## Methodology
+
 1. Detect License Plate
 2. Perform segmentation of characters
 3. Train a ML model to predict characters
@@ -30,6 +31,12 @@ Clone the repository.
 
 Change the path of the image/video file in DetectPlate.py
 
+Create virtual env. On windows you could do something like: py -m venv env
+
+Activate the virtual environment env
+
 Install the needed modules using: pip install -r requirements.txt
 
-Run PredictCharacters.py
+Run PredictCharacters.py. This will load the trained model (finalized_model.sav) which is added to repo for reference. Your own model can also be trained using the dataset attached in repo.
+
+Running PredictCharacters.py first gives grayscale and binary image. Then produces gray image with license plate bounded inside a rectangle.Each characters are also segmented and shown within boxes.Finally the model predicts the license plate.
